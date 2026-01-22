@@ -2,14 +2,14 @@
 
 ## Current version
 
-**Version: 9.3**
+**Version: 9.4**
 
-**16 December, 2025**
+**22 January, 2026**
 
-**SHA256:** 622789B2A623F770C6769372356B2E3D1FDD3CAA7AD676F2381C697511516FDF
+**SHA256:** CF1CDE5F4002DAEAA54D7268373D6765403E6A96C00C6E08912BBD7EC11ED323
 
 **Fixes**
-* Updated Criticality function
+* Updated Criticality function for GenericAll and Children
 
 
 
