@@ -105,12 +105,12 @@
 
 .NOTES
 
-**Version: 9.3**
+**Version: 9.4**
 
-**16 December, 2025**
+**22 January, 2026**
 
 **Fixes**
-* Updated Criticality function
+* Updated Criticality function for GenericAll and Children
 
 
 #>
@@ -526,7 +526,7 @@ Param
 
 )
 
-[string]$ADACLScanVersion = "-------`nAD ACL Scanner 9.3 , Author: Robin Granberg, @ipcdollar1, Github: github.com/canix1 `n-------"
+[string]$ADACLScanVersion = "-------`nAD ACL Scanner 9.4 , Author: Robin Granberg, @ipcdollar1, Github: github.com/canix1 `n-------"
 [string]$global:SessionID = [GUID]::NewGuid().Guid
 [string]$global:ACLHTMLFileName = "ACLHTML-$SessionID"
 [string]$global:SPNHTMLFileName = "SPNHTML-$SessionID"
@@ -840,7 +840,7 @@ $xamlBase = @'
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
                                 <StackPanel Orientation="Vertical" >
                                     <StackPanel Orientation="Horizontal" >
-                                        <Label x:Name="lblStyleVersion1" Content="AD ACL Scanner 9.3" HorizontalAlignment="Left" Height="25" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" Foreground="#FF46724C" Background="{x:Null}" FontWeight="Bold" FontSize="14"/>
+                                        <Label x:Name="lblStyleVersion1" Content="AD ACL Scanner 9.4" HorizontalAlignment="Left" Height="25" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" Foreground="#FF46724C" Background="{x:Null}" FontWeight="Bold" FontSize="14"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal" >
                                         <Label x:Name="lblStyleVersion2" Content="written by Robin Granberg " HorizontalAlignment="Left" Height="27" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Foreground="White" Background="{x:Null}" FontSize="12"/>
@@ -9289,7 +9289,7 @@ Function Get-Criticality {
                         $intCriticalityLevel = 4
                     }
                     'Children' {
-
+                        $intCriticalityLevel = 4
                     }
                     'Descendents' {
                         Switch ($objInheritedObjectType) {
@@ -10261,7 +10261,7 @@ $strHTMLText
                             $strPerm = "$objRights"
                         }
                         'None' {
-                            $strApplyTo = 'Children  within this container only'
+                            $strApplyTo = 'Children within this container only'
                             $strPerm = "$objRights"
                         }
                         'ObjectAceTypePresent, InheritedObjectAceTypePresent' {
